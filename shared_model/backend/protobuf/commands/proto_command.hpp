@@ -20,6 +20,7 @@
 
 #include "backend/protobuf/commands/proto_add_asset_quantity.hpp"
 #include "backend/protobuf/commands/proto_add_peer.hpp"
+#include "backend/protobuf/commands/proto_add_signatory.hpp"
 #include "commands.pb.h"
 #include "interfaces/commands/command.hpp"
 #include "utils/lazy_initializer.hpp"
