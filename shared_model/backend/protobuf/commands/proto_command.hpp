@@ -22,6 +22,7 @@
 #include "backend/protobuf/commands/proto_add_peer.hpp"
 #include "backend/protobuf/commands/proto_add_signatory.hpp"
 #include "backend/protobuf/commands/proto_append_role.hpp"
+#include "backend/protobuf/commands/proto_create_account.hpp"
 #include "commands.pb.h"
 #include "interfaces/commands/command.hpp"
 #include "utils/lazy_initializer.hpp"
