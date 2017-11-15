@@ -16,3 +16,5 @@
 #
 
 AddTest(lazy_test lazy_test.cpp)
+
+AddTest(blob_test cryptography/blob_test.cpp)
