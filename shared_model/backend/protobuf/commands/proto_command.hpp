@@ -26,6 +26,7 @@
 #include "backend/protobuf/commands/proto_create_asset.hpp"
 #include "backend/protobuf/commands/proto_create_domain.hpp"
 #include "backend/protobuf/commands/proto_create_role.hpp"
+#include "backend/protobuf/commands/proto_grant_permission.hpp"
 #include "commands.pb.h"
 #include "interfaces/commands/command.hpp"
 #include "utils/lazy_initializer.hpp"
