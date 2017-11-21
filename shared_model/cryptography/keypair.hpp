@@ -64,7 +64,8 @@ namespace shared_model {
             .finalize();
       }
 
-      OldModelType *makeOldModel() const override {
+      interface::Primitive<Keypair, iroha::keypair_t>::OldModelType *
+      makeOldModel() const override {
         return new iroha::keypair_t{
             .pubkey = publicKey().makeOldModel<PublicKey::OldPublicKeyType>(),
             .privkey =
@@ -79,7 +80,7 @@ namespace shared_model {
       PublicKey publicKey_;
       PrivateKey privateKey_;
     };
-  }
-};
+  }  // namespace crypto
+};   // namespace shared_model
 
 #endif  // IROHA_SHARED_MODEL_KEYPAIR_HPP
