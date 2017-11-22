@@ -17,3 +17,13 @@
 
 #include "backend/protobuf/commands/proto_command.hpp"
 #include "backend/protobuf/commands/proto_add_asset_quantity.hpp"
+#include "backend/protobuf/commands/proto_add_peer.hpp"
+#include "backend/protobuf/commands/proto_add_signatory.hpp"
+#include "backend/protobuf/commands/proto_append_role.hpp"
+#include "backend/protobuf/commands/proto_create_account.hpp"
+#include "backend/protobuf/commands/proto_create_asset.hpp"
+#include "backend/protobuf/commands/proto_create_domain.hpp"
+#include "backend/protobuf/commands/proto_create_role.hpp"
+#include "backend/protobuf/commands/proto_grant_permission.hpp"
+#include "backend/protobuf/commands/proto_remove_signatory.hpp"
+#include "backend/protobuf/commands/proto_transfer_asset.hpp"
