@@ -36,17 +36,18 @@
 template <typename... T>
 auto load(const iroha::protocol::Command &ar) {
   int which = ar.command_case() - 1;
-  return shared_model::detail::variant_impl<T...>::template load<
-      shared_model::interface::Command::CommandVariantType>(ar, which);
+  return shared_model::detail::variant_impl<T...>::
+      template load<shared_model::interface::Command::CommandVariantType>(
+          ar, which);
 }
 
 namespace shared_model {
   namespace proto {
     class Command final : public interface::Command {
      private:
-      /// polymorphic wrapper type shortcut
-      template <typename Value>
-      using w = detail::PolymorphicWrapper<Value>;
+      /// PolymorphicWrapper shortcut type
+      template <typename... Value>
+      using wrap = boost::variant<detail::PolymorphicWrapper<Value>...>;
 
       /// lazy variant shortcut
       using LazyVariantType = detail::LazyInitializer<CommandVariantType>;
@@ -55,7 +56,16 @@ namespace shared_model {
 
      public:
       /// type of proto variant
-      using ProtoCommandVariantType = boost::variant<w<AddAssetQuantity>>;
+      using ProtoCommandVariantType = wrap<AddAssetQuantity,
+                                           AddPeer,
+                                           AddSignatory,
+                                           AppendRole,
+                                           CreateAccount,
+                                           CreateAsset,
+                                           CreateDomain,
+                                           CreateRole,
+                                           GrantPermission,
+                                           RemoveSignatory>;
 
       /// list of types in proto variant
       using ProtoCommandListType = ProtoCommandVariantType::types;

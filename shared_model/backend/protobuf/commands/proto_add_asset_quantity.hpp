@@ -66,7 +66,7 @@ namespace shared_model {
       // ----------------------------| private API |----------------------------
       explicit AddAssetQuantity(RefAddAssetQuantity &&ref)
           : add_asset_quantity_(std::move(ref)), amount_([this] {
-              return proto::Amount(this->add_asset_quantity_->amount());
+              return proto::Amount(add_asset_quantity_->amount());
             }) {}
 
       // ------------------------------| fields |-------------------------------
