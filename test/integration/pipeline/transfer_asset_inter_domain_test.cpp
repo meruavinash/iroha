@@ -74,10 +74,6 @@ class TransferAssetInterDomainTest : public TxPipelineIntegrationTestFixture {
     ASSERT_TRUE(irohad->storage);
 
     iroha::main::BlockInserter(irohad->storage).applyToLedger({genesis_block});
-    irohad->storage->getBlockQuery()->getTopBlocks(1).subscribe([](auto block) {
-      std::cout << "hoge\n";
-      EXPECT_EQ(block.transactions.size(), 2);
-    });
     irohad->init();
     irohad->run();
   }
